@@ -1,4 +1,4 @@
-# Простой Менеджер Задач
+# Simple Task Manager
 
 Description:
 Simple Task Manager is a powerful tool for managing daily tasks using Google Sheets. This app provides the basics for adding, tracking, and completing tasks in a convenient and familiar Google Sheets environment.
