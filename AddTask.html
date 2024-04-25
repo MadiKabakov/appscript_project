@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base target="_top">
+  <style>
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  form {
+    background: white;
+    padding: 20px;
+  }
+
+  input[type="text"], input[type="date"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+
+</head>
+<body>
+  <form id="taskForm">
+    <div><label>Task:</label><input name="task" type="text" /></div>
+    <div><label>Status:</label><input name="status" type="text" /></div>
+    <div><label>Start Date:</label><input name="startDate" type="date" /></div>
+    <div><label>End Date:</label><input name="endDate" type="date" /></div>
+    <div><button type="button" onclick="submitForm()">Add Task</button></div>
+  </form>
+
+  <script>
+    function submitForm() {
+      var form = document.getElementById('taskForm');
+      var task = form.task.value;
+      var status = form.status.value;
+      var startDate = form.startDate.value;
+      var endDate = form.endDate.value;
+      google.script.run.addTask(task, status, startDate, endDate);
+      google.script.host.close();
+    }
+  </script>
+</body>
+</html>
